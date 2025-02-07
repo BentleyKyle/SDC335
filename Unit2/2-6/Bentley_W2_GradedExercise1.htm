@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--
+            CIS213 Unit 2, Performance Assesment 1
+            Author: Kyle Bentley
+            Date:   2/6/2025
+        -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Unit 2 Performance Assesment 1</title>
+</head>
+
+<body>
+    <header>
+        <h1>Kyle Bentley, Calculate Shipping and Handling</h1>
+    </header>
+    <article>
+        <form>
+            <fieldset>
+                <label for="priceValue" id="priceLabel">
+                    Purchase Price
+                </label>
+                <input type="text" id="priceValue" />
+            </fieldset>
+            <fieldset>
+                <button type="button" id="button">Calculate Shipping and Handling</button>
+            </fieldset>
+        </form>
+    </article>
+
+    <script>
+        //function that calculates shipping and handling for order
+        function calcPrice() {
+            var userPrice = parseFloat(document.getElementById("priceValue").value);
+            var orderTotal = 0;
+            var orderFee = 0;
+
+            //if user price <= 25 order fee is 1.5, display aler with order total
+            if (userPrice <= 25) {
+                orderFee = 1.50;
+                orderTotal = userPrice + orderFee;
+                alert("The order total is: $" + orderTotal);
+            }
+            //if user price > 25 order fee is 10%, display alert with orderTotal
+            else {
+                orderFee = userPrice * 0.10;
+                orderTotal = userPrice + orderFee;
+                alert("The order total is: $" + orderTotal);
+            }
+        }
+
+        // add backward compatible event listener to Submit button
+        var submitButton = document.getElementById("button");
+        if (submitButton.addEventListener) {
+            submitButton.addEventListener("click", calcPrice, false);
+        } 
+        else if (submitButton.attachEvent) {
+            submitButton.attachEvent("onclick", calcPrice);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--
+            CIS213 Unit 2, Graded Exercise 2
+            Author: Kyle Bentley
+            Date:   2/6/2025
+        -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Unit 2 Graded Exercise 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>Kyle Bentley, Even Numbers</h1>
+    </header>
+
+    <div id="evenNumbers"></div>
+
+    <script>
+        //start with first even number
+        var i = 2;
+        //store result
+        var result = '';
+
+        //while loop
+        while (i <= 101) {
+            //add result to page with a linebreak for each new number following
+            result += i + '<br>';
+            //increment by 2
+            i += 2;
+        }
+
+        //display results
+        document.getElementById('evenNumbers').innerHTML = result;
+    </script>
+</body>
+</html>
